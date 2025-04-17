@@ -1,0 +1,168 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <img src="images\profille_program.jpeg"  class="imag">
+            <nav>
+                <img src="images\logoo.png" class="logo" alt="Logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closeMenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openMenu()"></i>
+            </nav>
+
+            <div class="header-text">
+                <p>Web Developer</p><h1>Hi, I'm <span>Manoj Kumar</span> from India</h1>
+                
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container row">
+            <div class="about-col-1">
+            </div>
+            <div class="about-col-2">
+                <h2 class="sub-title">About Me</h2>
+                <br>
+                <p>Undergraduate Student</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                    <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                    <p class="tab-links" onclick="openTab('education')">Education</p>
+                </div>
+
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>HTML/CSS/JS</span><br>Responsive Web Design</li>
+                        <li><span>Python</span><br> ML & DL</li>
+                        <li><span>React</span><br>Frontend Development</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2024 - 2025</span><br>Intern at Feynn Labs</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="education">
+                    <ul> <li>• BE CSE(AIML) - Keshav Memorial Engineering College</li>
+                        <li>• Diploma EEE - Anurag College of Engineering.</li>
+                        <li>•  Class 10th - ZPHS High School</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="sub-title">My Services</h2>
+            <div class="services-list">
+                <div>
+                    <i class="fas fa-code"></i>
+                    <h2>Web Development</h2>
+                    <p>I create responsive websites using HTML, CSS, JavaScript and React.</p>
+                    <a href="https://github.com/Manoj6245">Learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-chart-line"></i>
+                    <h2>Data Analysis</h2>
+                    <p>Skilled in Python and ML for analyzing and visualizing data efficiently.</p>
+                    <a href="https://github.com/Manoj6245">Learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-robot"></i>
+                    <h2>AI Projects</h2>
+                    <p>Working on real-time AI-based solutions for automation and prediction.</p>
+                    <a href="https://github.com/Manoj6245">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="sub-title">My Projects</h2>
+            <ul class="certificate">
+                <li>Crop Yield Prediction using ML</li>
+                <li>Disease Classification using Deep learning</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container row">
+            <div class="contact-left">
+                <h2 class="sub-title">Contact Me</h2>
+                <p><i class="fas fa-paper-plane"></i> manojnetha75@gmail.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="resume\Masuram_Manojkumar.pdf" download class="button">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="button">Send Message</button>
+                    <span id="msg"></span>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="copyright">
+        <p>© 2025 Manoj. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openMenu() {
+            sidemenu.style.right = "0";
+        }
+        function closeMenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+        var tabLinks = document.getElementsByClassName("tab-links");
+        var tabContents = document.getElementsByClassName("tab-contents");
+
+        function openTab(tabName) {
+            for (tabLink of tabLinks) {
+                tabLink.classList.remove("active-link");
+            }
+            for (tabContent of tabContents) {
+                tabContent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabName).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
